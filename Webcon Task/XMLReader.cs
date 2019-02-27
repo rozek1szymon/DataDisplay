@@ -8,16 +8,17 @@ using Webcon_Task.Builder;
 
 namespace Webcon_Task
 {
-    public class XmlReader : Builder.Builder
+    public class XmlReader : Builder.IBuilder
     {
 
         public Product product = new Product();
         public XmlDocument XmlDoc;
         public string text;
 
+        //without validation
         public void Construct(string PathFile)
         {
-            //without validation
+            
             XmlDoc = new XmlDocument();
             XmlDoc.Load(PathFile);
             product.Data.Add("Our XML\n");
@@ -28,18 +29,6 @@ namespace Webcon_Task
                 product.Data.Add(text);
             }
         }
-
-
-        //public int GetNumberOfItems(string name)
-        //{
-        //    return XmlDoc.GetElementsByTagName(name).Count;
-        //}
-
-        //public string GetElementValue(int number, string name)
-        //{
-        //    return XmlDoc.GetElementsByTagName(name).Item(number).InnerText;
-        //}
-       
 
         public Product BuildOutput()
         {

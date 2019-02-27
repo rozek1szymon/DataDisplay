@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Webcon_Task.Builder
 {
-    interface Builder
+     public interface IBuilder
     {
        
         void Construct(string path);

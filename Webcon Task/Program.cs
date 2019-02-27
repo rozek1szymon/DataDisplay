@@ -13,18 +13,15 @@ namespace Webcon_Task
     {
         
     static void Main(string[] args)
-        {
-           
-            
+        {           
             XmlReader xmlReader= new XmlReader();
             JSONReader jSONReader = new JSONReader();
+
             xmlReader.Construct("myXml.xml");
             jSONReader.Construct("json1.json");
+
             View.MyDataInfo(xmlReader.BuildOutput());
             View.MyDataInfo(jSONReader.BuildOutput());
-           
-            
-
 
             Console.ReadKey();
         }

@@ -12,25 +12,25 @@ using Webcon_Task.Builder;
 namespace Webcon_Task
 {
     
-    class JSONReader : Builder.Builder
+    class JSONReader : Builder.IBuilder
     {
         public JObject jObject;
         public  StreamReader file;
         public JsonTextReader reader;
-        public Product product = new Product();
-        public JsonSchema schema;
+        public Product product;
 
 
+        //  Without validation
         public void Construct(string Pathfile)
         {
-            //  Without validation
+            
+            product = new Product();
             file = File.OpenText(Pathfile);
             reader = new JsonTextReader(file);
             jObject = new JObject();
             jObject = (JObject)JToken.ReadFrom(reader);
             product.Data.Add("Our Json\n" + jObject);
             
-
         }
 
         public Product BuildOutput()
