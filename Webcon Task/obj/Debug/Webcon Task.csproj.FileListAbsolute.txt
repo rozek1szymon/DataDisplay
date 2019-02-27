@@ -1,0 +1,22 @@
+C:\Users\HP\Desktop\Webcon Task\Webcon Task\bin\Debug\Webcon Task.exe.config
+C:\Users\HP\Desktop\Webcon Task\Webcon Task\bin\Debug\Webcon Task.exe
+C:\Users\HP\Desktop\Webcon Task\Webcon Task\bin\Debug\Webcon Task.pdb
+C:\Users\HP\Desktop\Webcon Task\Webcon Task\obj\Debug\Webcon Task.csprojAssemblyReference.cache
+C:\Users\HP\Desktop\Webcon Task\Webcon Task\obj\Debug\Webcon Task.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Webcon Task\Webcon Task\obj\Debug\Webcon Task.exe
+C:\Users\HP\Desktop\Webcon Task\Webcon Task\obj\Debug\Webcon Task.pdb
+C:\Users\HP\Desktop\Webcon Task\Webcon Task\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HP\Desktop\Webcon Task\Webcon Task\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\HP\Desktop\Webcon Task\Webcon Task\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HP\Desktop\Webcon Task\Webcon Task\obj\Debug\Webcon Task.csproj.CopyComplete
+C:\Users\HP\Desktop\Nowy folder (2)\Webcon Task\bin\Debug\Webcon Task.exe.config
+C:\Users\HP\Desktop\Nowy folder (2)\Webcon Task\bin\Debug\Webcon Task.exe
+C:\Users\HP\Desktop\Nowy folder (2)\Webcon Task\bin\Debug\Webcon Task.pdb
+C:\Users\HP\Desktop\Nowy folder (2)\Webcon Task\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HP\Desktop\Nowy folder (2)\Webcon Task\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\HP\Desktop\Nowy folder (2)\Webcon Task\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HP\Desktop\Nowy folder (2)\Webcon Task\obj\Debug\Webcon Task.csprojAssemblyReference.cache
+C:\Users\HP\Desktop\Nowy folder (2)\Webcon Task\obj\Debug\Webcon Task.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Nowy folder (2)\Webcon Task\obj\Debug\Webcon Task.csproj.CopyComplete
+C:\Users\HP\Desktop\Nowy folder (2)\Webcon Task\obj\Debug\Webcon Task.exe
+C:\Users\HP\Desktop\Nowy folder (2)\Webcon Task\obj\Debug\Webcon Task.pdb
