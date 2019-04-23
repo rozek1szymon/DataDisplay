@@ -1,0 +1,32 @@
+﻿@model Task1PackagesSender.Models.MainPackage
+@{
+    ViewBag.Title = "Product listing";
+}
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+<link href="~/css/IndexCss.css" rel="stylesheet" />
+<link href="~/css/TableMainPage.css" rel="stylesheet" />
+<h2>Simple Packages Manager</h2>
+<p>
+    <a asp-action="Create" style="color:black; text-decoration:none;"><strong>Create New</strong></a>
+</p>
+
+<form asp-controller="HomeController" asp-action="Index2">
+    <select id="isopen" asp-for="IsPackageOpen">
+        <option value="null" placeholder="all">all</option>
+        <option value="true">open</option>
+        <option value="false">closed</option>
+    </select>
+
+    <button id="button" type="button" class="btn btn-success" value="Search">Click</button>
+</form>
+
+
+<div class="partial">
+    @Html.Partial("_IndexPartial")
+
+</div>
+
+
+
+<script src="~/js/site.js"></script>

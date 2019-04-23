@@ -1,0 +1,140 @@
+﻿@model Task1PackagesSender.Models.MainPackage
+
+
+<h2>Create</h2>
+<link href="~/css/TableForParcels.css" rel="stylesheet" />
+<h4>MainPackage</h4>
+<hr />
+<form asp-action="CreatePackageWithDeliveries">
+    <div class="row">
+        <div class="col-md-4">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NameOfPackage" class="control-label"></label>
+                <input asp-for="NameOfPackage" class="form-control" />
+                <span asp-validation-for="NameOfPackage" class="text-danger"></span>
+            </div>
+
+            <input asp-for="IsPackageOpen" type="hidden" value="true" />
+            <div class="form-group">
+                <label asp-for="DestinationCityOfDelivery" class="control-label"></label>
+                <input asp-for="DestinationCityOfDelivery" class="form-control" />
+                <span asp-validation-for="DestinationCityOfDelivery" class="text-danger"></span>
+            </div>
+            <div>
+            </div>
+        </div>
+        <div class=" partial1">
+            <button type="button" class="adder" id="adder">Add</button>
+            <table class="table">
+                <thead>
+                    <tr style="background-color:#313030">
+                        <th>
+                            Name Of Package
+                        </th>
+                        <th>
+                            Adress Of Destination
+                        </th>
+                        <th>
+                            Weight Of Delivery
+                        </th>
+                        <th>
+                            Approval
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.Deliveries.Count; i++)
+                    {
+
+                        <tr>
+                            <td class="text-left">
+                               
+                                <input placeholder="Required 3-50 char" class="items" asp-for="Deliveries[i].NameOfParcel" />
+                                <span asp-validation-for="Deliveries[i].NameOfParcel" class="text-danger"></span>
+                            </td>
+                            <td class="text-left">
+                                <input class="items1"   placeholder="Required 3-50 char" asp-for="Deliveries[i].AddressOfDestination" />
+                                <span asp-validation-for="Deliveries[i].AddressOfDestination" class="text-danger"></span>
+                            </td>
+                            <td class="text-left">
+                                <input class="items2" placeholder="Required numbers"  asp-for="Deliveries[i].WeightOfDelivery" />
+                                <span asp-validation-for="Deliveries[i].WeightOfDelivery"  class="text-danger"></span>
+                            </td>
+                            <td>
+
+                                <input asp-for="Deliveries[i].PackageID" class="PackageID" value="0" type="hidden"  />
+                                <input asp-for="Deliveries[i].DeliveryID" class="DeliveryID" type="hidden" />
+                                <button class="deleter" type="button">Delete</button>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+       
+        <button type="submit" style="float:left;" id="submit" class="btn alert-success">Save</button>
+        
+    </div>
+</form>
+
+
+
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    var pages1;
+    var ifThisIsOurFirstAdd = true;
+    $(window).on("load", function () {
+        var pages = $(".items").length        
+        pages1 = pages;
+       
+        if (pages > 0)
+        {
+            ifThisIsOurFirstAdd = false;
+        }
+       
+    });
+
+    var currentValue=null;
+    $('.adder').click(function () {  
+        var i = ($(".items").length);                      
+        if (i != pages1 && ifThisIsOurFirstAdd == true) {
+            i = i / 2;
+        }
+        else if (currentValue != null) {
+            i = currentValue + 1;
+            currentValue = i;
+        }
+        else if (pages1 > 0 && i != pages1) {
+
+            i = i - 1;
+            currentValue = i;
+        }
+       
+        
+       
+
+
+         var markup = "<tr><td><input name='Deliveries[" + i + "].PackageID'  class='PackageID' type='hidden' /><input class='items' asp-for='Deliveries' placeholder='Required 3-50 char'   name='Deliveries[" + i + "].NameOfParcel' />" +
+             "</td > <td><input class='items' asp-for='Deliveries'  name='Deliveries[" + i + "].AddressOfDestination' placeholder='Required 3-50 char' /> </td> <td> <input asp-for='Deliveries' placeholder='Required numbers' name='Deliveries[" + i + "].WeightOfDelivery' value='0' /></td>" +
+             "<td><button class='deleter'  type='button'>Delete</button></td></tr>"
+$('.table tbody').append(markup);
+    });
+    $('.table').on('click', '.deleter', function () {
+        $(this).closest('tr').hide();
+        console.log($(this).closest('tr').find('input[class=PackageID]').val());
+        $(this).closest('tr').find('input[class=PackageID]').val(-1);
+        console.log($(this).closest('tr').find('input[class=PackageID]').val());
+        //$(this).closest('tr').find('input[class=items]').remove();
+       // $(this).closest('tr').find('input[class=items1]').val(null);
+        //$(this).closest('tr').find('input[class=items2]').val(0);
+    });
+
+</script>

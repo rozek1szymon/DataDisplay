@@ -1,0 +1,100 @@
+﻿@model Task1PackagesSender.Models.MainPackage
+<link href="~/css/TableMainPage.css" rel="stylesheet" />
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-left">
+                Package
+            </th>
+            <th class="text-left">
+                Date Of Made
+            </th>
+            <th class="text-left">
+                Status
+            </th>
+            <th class="text-left">
+                Date Of Closed
+            </th>
+            <th class="text-left">
+                City Of Delivery
+            </th>
+            <th class="text-left">
+                Deliveries
+            </th>
+            <th class="text-left">Manage</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.OnePageOfProducts)
+        {
+            <tr>
+                <td class="text-left">
+                    @item.NameOfPackage
+                </td>
+                <td class="text-left">
+                    @item.DateOfMadeThePackage
+                </td>
+                <td class="text-left">
+                    @if (@item.IsPackageOpen == true)
+                    {
+                        <img src="~/images/untitled.png" height="42" width="42">
+                    }
+                    else
+                    {
+                        <img src="~/images/1600.png" height="42" width="42">
+                    }
+
+                </td>
+                <td class="text-left">
+                    @if (item.DateOfCloseThePackage != null)
+                    {
+                        @item.DateOfCloseThePackage
+                    }
+
+                </td>
+                <td class="text-left">
+                    @item.DestinationCityOfDelivery
+                </td>
+                <td class="text-left">
+                    @{
+                        <p> @item.Deliveries.Count</p>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" class="add" asp-route-id="@item.PackageID">Edit</a>
+                    <a asp-action="Delete" class="delete" asp-route-id="@item.PackageID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager((IPagedList)ViewBag.OnePageOfProducts, page => Url.Action("Index", new { page }))
+
+<style rel="stylesheet">
+    .delete {
+        color: #a80000;
+        font-weight: 400;
+        font-size: large;
+    }
+    .add {
+        font-size: large;
+        font-weight: 400;
+        color: forestgreen;
+    }
+    .delete:hover {
+        font-size: large;
+        font-weight:400;
+        color: #ff3e23;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .add:hover {
+        font-weight: 400;
+        font-size: large;
+        color: greenyellow;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>

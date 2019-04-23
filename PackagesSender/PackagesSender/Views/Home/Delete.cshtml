@@ -1,0 +1,51 @@
+﻿@model Task1PackagesSender.Models.MainPackage
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MainPackage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NameOfPackage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NameOfPackage)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfMadeThePackage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateOfMadeThePackage)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsPackageOpen)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsPackageOpen)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfCloseThePackage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateOfCloseThePackage)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinationCityOfDelivery)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DestinationCityOfDelivery)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="PackageID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

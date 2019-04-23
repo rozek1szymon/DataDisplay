@@ -1,0 +1,113 @@
+﻿@model Task1PackagesSender.Models.MainPackagesIndexData;
+<link href="~/css/TableForParcels.css" rel="stylesheet" />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<form asp-action="EditFewDeliveries" method="post">
+    <div class="container">
+        <div class="col-md-4">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @Html.HiddenFor(a => a.MainPackage.PackageID)
+            @Html.HiddenFor(a => a.MainPackage.DateOfCloseThePackage)
+            <div class="group">
+                <label asp-for="MainPackage.NameOfPackage"></label>
+                <input asp-for="MainPackage.NameOfPackage" class="form-control" />
+                <span asp-validation-for="MainPackage.NameOfPackage" class="text-danger"></span>
+            </div>
+           
+                <strong> Open or close your Package</strong>
+                <div class="radio">
+                    <label>
+
+                        <input asp-for="MainPackage.IsPackageOpen" style="height:15px; width:15px;" />
+                    </label>
+                </div>
+            
+
+
+            <div class="form-group">
+                <input asp-for="MainPackage.DateOfMadeThePackage" type="hidden" />
+                <label asp-for="MainPackage.DestinationCityOfDelivery" class="control-label"></label>
+                <input asp-for="MainPackage.DestinationCityOfDelivery" class="form-control" />
+                <span asp-validation-for="MainPackage.DestinationCityOfDelivery" class="text-danger"></span>
+            </div>
+        </div>
+    </div>     
+    <div>
+        @{
+            if (Model.MainPackage.IsPackageOpen == false)
+            {
+                <h6>You cannot manage your deliveries</h6>
+            }
+            else
+            {
+                <div class=" partial1">
+                    <button type="button" class="adder" id="adder"  >Add</button>
+                        <table class="table">
+                            <thead>
+                                <tr style="background-color:#313030" >
+                                    <th >
+                                        Name Of Package
+                                    </th>
+                                    <th >
+                                        Adress Of Destination
+                                    </th>
+                                    <th >
+                                        Weight Of Delivery
+                                    </th>
+                                    <th>
+                                        Approval
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 0; i < Model.Deliveries.Count; i++)
+                                {
+                                    <tr>
+                                        <td class="text-left">
+                                            <input placeholder="Required 3-50 char" asp-for="Deliveries[i].NameOfParcel" />
+                                            <span asp-validation-for="Deliveries[i].NameOfParcel" class="text-danger"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            <input class="items" placeholder="Required 3-50 char" asp-for="Deliveries[i].AddressOfDestination" />
+                                            <span asp-validation-for="Deliveries[i].AddressOfDestination" class="text-danger"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            <input class="items" placeholder="Required numbers" asp-for="Deliveries[i].WeightOfDelivery" />
+                                            <span asp-validation-for="Deliveries[i].WeightOfDelivery" class="text-danger"></span>
+                                        </td>
+                                        <td>
+                                           
+                                            <input asp-for="Deliveries[i].PackageID" class="PackageID" type="hidden"/>                                          
+                                            <input asp-for="Deliveries[i].DeliveryID" class="DeliveryID" type="hidden" />
+                                            <button class="deleter" data-assign-id="@Model.Deliveries[i].DeliveryID" type="button">Delete</button>
+                                            </td>
+
+                                    </tr>
+                                }
+                           </tbody>
+                        </table>                  
+                </div>
+            }
+        }
+        <button type="submit" style="float:left;" id="submit" class="btn alert-success">Save changes</button>
+    </div>
+    
+</form>
+ <script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+       $('.adder').click(function () {       
+    var i = ($(".items").length) / 2;
+           var markup = "<tr><td><input name='Deliveries[" + i + "].PackageID' value='@Model.MainPackage.PackageID' class='PackageID' type='hidden' /><input class='items' asp-for='Deliveries' placeholder='Required 3-50 char' name='Deliveries[" + i + "].NameOfParcel' />" +
+               "</td > <td><input class='items' asp-for='Deliveries' name='Deliveries[" + i + "].AddressOfDestination' placeholder='Required 3-50 char' /> </td> <td> <input asp-for='Deliveries' placeholder='Required numbers' name='Deliveries[" + i + "].WeightOfDelivery' /></td>"+
+                "<td><button class='deleter' type='button'>Delete</button></td></tr>";                                              
+$('.table tbody').append(markup);
+  });
+
+$('.table').on('click','.deleter',function () {
+    $(this).closest('tr').hide();
+    $(this).closest('tr').find('input[class=PackageID]').val(0);   
+    });
+   
+</script>
