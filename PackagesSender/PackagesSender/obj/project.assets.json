@@ -12773,11 +12773,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\s.rozek\\Desktop\\Task-WebCon-2204b66e1aede229743cffc589243dc55448c657\\Task1PackagesSender-vol3\\Task1PackagesSender.csproj",
+      "projectUniqueName": "C:\\Users\\s.rozek\\Desktop\\.NET GITHUB PROJECTS\\PackagesSender\\PackagesSender\\Task1PackagesSender.csproj",
       "projectName": "Task1PackagesSender",
-      "projectPath": "C:\\Users\\s.rozek\\Desktop\\Task-WebCon-2204b66e1aede229743cffc589243dc55448c657\\Task1PackagesSender-vol3\\Task1PackagesSender.csproj",
+      "projectPath": "C:\\Users\\s.rozek\\Desktop\\.NET GITHUB PROJECTS\\PackagesSender\\PackagesSender\\Task1PackagesSender.csproj",
       "packagesPath": "C:\\Users\\s.rozek\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\s.rozek\\Desktop\\Task-WebCon-2204b66e1aede229743cffc589243dc55448c657\\Task1PackagesSender-vol3\\obj\\",
+      "outputPath": "C:\\Users\\s.rozek\\Desktop\\.NET GITHUB PROJECTS\\PackagesSender\\PackagesSender\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
