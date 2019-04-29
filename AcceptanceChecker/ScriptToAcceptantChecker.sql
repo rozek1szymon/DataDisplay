@@ -62,13 +62,6 @@ INSERT [dbo].[AcceptingPeople] ([ACP_ID], [ACP_Category], [ACP_Login], [ACP_Limi
 INSERT [dbo].[AcceptingPeople] ([ACP_ID], [ACP_Category], [ACP_Login], [ACP_Limit], [ACP_SubstituteLogin], [ACP_SubstituteLimit]) VALUES (24, N'Sprzet', N'simon1', CAST(1000000.00 AS Decimal(18, 2)), N'maciek1', CAST(15000.00 AS Decimal(18, 2)))
 INSERT [dbo].[AcceptingPeople] ([ACP_ID], [ACP_Category], [ACP_Login], [ACP_Limit], [ACP_SubstituteLogin], [ACP_SubstituteLimit]) VALUES (25, N'Oprogramowanie', N'simon1', CAST(1000000.00 AS Decimal(18, 2)), N'maciek1', CAST(15000.00 AS Decimal(18, 2)))
 INSERT [dbo].[AcceptingPeople] ([ACP_ID], [ACP_Category], [ACP_Login], [ACP_Limit], [ACP_SubstituteLogin], [ACP_SubstituteLimit]) VALUES (26, N'Wyjscia', N'patryk1', CAST(5000.00 AS Decimal(18, 2)), N'marcin1', CAST(3100.00 AS Decimal(18, 2)))
-INSERT [dbo].[AcceptingPeople] ([ACP_ID], [ACP_Category], [ACP_Login], [ACP_Limit], [ACP_SubstituteLogin], [ACP_SubstituteLimit]) VALUES (27, N'Hardware', N'l.radon', CAST(1000.00 AS Decimal(18, 2)), N'l.swiszcz', CAST(500.00 AS Decimal(18, 2)))
-INSERT [dbo].[AcceptingPeople] ([ACP_ID], [ACP_Category], [ACP_Login], [ACP_Limit], [ACP_SubstituteLogin], [ACP_SubstituteLimit]) VALUES (28, N'Software', N'l.radon', CAST(600.00 AS Decimal(18, 2)), NULL, NULL)
-INSERT [dbo].[AcceptingPeople] ([ACP_ID], [ACP_Category], [ACP_Login], [ACP_Limit], [ACP_SubstituteLogin], [ACP_SubstituteLimit]) VALUES (29, N'Software', N't.batko', CAST(1500.00 AS Decimal(18, 2)), N'p.pakula', CAST(800.00 AS Decimal(18, 2)))
-INSERT [dbo].[AcceptingPeople] ([ACP_ID], [ACP_Category], [ACP_Login], [ACP_Limit], [ACP_SubstituteLogin], [ACP_SubstituteLimit]) VALUES (30, N'Software', N't.batko', CAST(1500.00 AS Decimal(18, 2)), N'l.swiszcz', CAST(400.00 AS Decimal(18, 2)))
-INSERT [dbo].[AcceptingPeople] ([ACP_ID], [ACP_Category], [ACP_Login], [ACP_Limit], [ACP_SubstituteLogin], [ACP_SubstituteLimit]) VALUES (31, N'Administration', N'p.pakula', CAST(700.00 AS Decimal(18, 2)), NULL, NULL)
-INSERT [dbo].[AcceptingPeople] ([ACP_ID], [ACP_Category], [ACP_Login], [ACP_Limit], [ACP_SubstituteLogin], [ACP_SubstituteLimit]) VALUES (32, N'Administration', N'm.kapusta', CAST(1500.00 AS Decimal(18, 2)), NULL, NULL)
-INSERT [dbo].[AcceptingPeople] ([ACP_ID], [ACP_Category], [ACP_Login], [ACP_Limit], [ACP_SubstituteLogin], [ACP_SubstituteLimit]) VALUES (33, N'Software', N'p.pakula', CAST(1000.00 AS Decimal(18, 2)), NULL, NULL)
 SET IDENTITY_INSERT [dbo].[AcceptingPeople] OFF
 SET IDENTITY_INSERT [dbo].[Employees] ON 
 
