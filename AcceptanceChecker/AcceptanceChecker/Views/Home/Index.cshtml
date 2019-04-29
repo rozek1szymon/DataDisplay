@@ -1,0 +1,20 @@
+﻿@model Task1PackagesSender.Models.DataWrapper;
+@{
+    Layout = null;
+}
+<form asp-action="Index" method="post">
+
+    <div class="container">
+        <div class="col-md-4" style=" text-align:center; margin:auto">
+            <p style="color:red;">@ViewData["Login"]</p>
+            <h4>Hello Sign in to our system</h4>
+            <div class="form-group">
+                @Html.HiddenFor(a => a.currentUser.ORG_ManagerID)
+                <input asp-for="currentUser.Login" />
+            </div>
+            <button type="submit">Submit</button>
+        </div>
+        </div>
+
+</form>
+
